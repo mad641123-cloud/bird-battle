@@ -1,0 +1,156 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background: #14253d;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.game-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    padding: clamp(5px, 2vw, 20px);
+    margin: auto;
+    text-align: center;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px;
+    background: #263f60;
+    border-radius: 14px 14px 0 0;
+}
+
+.logo {
+    font-size: clamp(17px, 3vw, 28px);
+    font-weight: 900;
+    color: #ffd34e;
+}
+
+.score-panel {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: clamp(12px, 2vw, 17px);
+    font-weight: bold;
+}
+
+main {
+    width: 100%;
+    overflow: hidden;
+    background: #87ceeb;
+    line-height: 0;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 25 / 14;
+    touch-action: none;
+    user-select: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 8px;
+    background: #263f60;
+}
+
+button {
+    min-height: 44px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 10px;
+    background: #ffc83d;
+    color: #432b12;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+#message {
+    padding: 14px 8px;
+    background: #263f60;
+    color: #ffe58a;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+footer {
+    padding: 12px;
+    color: #a9bed5;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+    .game-wrapper {
+        padding: 0;
+    }
+
+    .top-bar {
+        border-radius: 0;
+        justify-content: center;
+    }
+
+    .score-panel {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .controls {
+        gap: 8px;
+    }
+
+    button {
+        flex: 1;
+        padding: 10px 8px;
+    }
+
+    footer {
+        font-size: 9px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .game-wrapper {
+        max-width: 1000px;
+    }
+
+    .top-bar {
+        padding: 5px;
+    }
+
+    .controls {
+        padding: 5px;
+    }
+
+    #message {
+        padding: 5px;
+    }
+}
